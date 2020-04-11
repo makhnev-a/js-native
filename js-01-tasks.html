@@ -11,7 +11,7 @@
    // 1. Тернарное выражение
 
     // <<task 1>> измените значение age (row 3), чтобы в консоли увидеть "Oldman" вместо "Youngman"
-   let nickName = age >= 60 ? "Oldman" : "Youngman" ;
+   let nickName = age <= 60 ? "Oldman" : "Youngman" ;
    console.log(nickName); 
    
    
@@ -22,32 +22,41 @@
 
    // <<task 4>> перепишите if-else c помощью тернарного выражения
    let name = "Dimych";
-   let message = "";
-   if (name !== "Dimych") {
+   let message = (name !== 'Dimych') ? 'not mentor' : 'mentor';
+   /*if (name !== "Dimych") {
         message = "not mentor";
    } else {
        message = "mentor";
-   }
+   }*/
+
    console.log(message);
    
    //<<task 5>> сделайте с помощью тернарного выражения,  что бы css-класс "error" добавлялся ТОЛЬКО ЕСЛИ в инпуте значение меньшее 18
    let input = document.getElementById("age-input");
-   input.className = "error";
+   (input.value < 18) ? input.className = 'error' : input.className = '';
    
 
    // <<task 6>> с помощью функции map преобразуйте массив строк в массив чисел
    // вот такой массив нужно получить: [1,2,5,20]
     let strings = ['1', '2', '5', '20'];
-   // let numbers = strings.map(); 
+    let numbers = strings.map((item) => {
+        return parseInt(item);
+    });
+
+    console.log(numbers, strings);
 
    
    // <<task 7>> с помощью функции map преобразуйте массив объектов в массив имен (строк)
    // вот такой массив нужно получить: ['Alex','Nick','Jhon']
     
    let users = [{name:'Alex'},{name:'Nick'},{name:'Jhon'}];
-   // let names = users.map();
+   let names = users.map((item) => {
+       return item.name;
+   });
+
+   console.log(names);
    
-   Для развития:
+   /*Для развития:
 
    1. Создайте функцию discount, которая принимает параметром сумму покупки в рублях (без копеек). Если сумма покупки больше 100 рублей, предоставляется скидка 15%. Вывести в консоль сумму с учётом скидки или сообщение о том, что скидка не предоставляется.
 
@@ -65,11 +74,72 @@
    7. Преобразуйте исходный массив в массив, элементы которого будут: 
     - если исходный элемент  - число, то новый элемент будет объектом в виде {age: 23}; 
     - если строка, то в новом массиве элемент будет той же строкой в верхнем регистре (метод toUpperCase());
-    - в остальных случаях элементы преобразуются в строку ‘not a number or a string’.
+    - в остальных случаях элементы преобразуются в строку ‘not a number or a string’.*/
+
+   const discount = (rub) => {
+       return rub > 100
+           ? console.log(`discount for ${rub}rub = ${(rub * 15) / 100}rub`)
+           : console.log('no discount!');
+   };
+
+   console.log(discount(1000));
+
+   const isDivide = (a, b) => {
+       return (a % b) === 0 ? 'true' : 'false';
+   };
+
+   console.log('isDivide = ' + isDivide(5, 2));
+
+   const isCircleBigger = (s1q, s2c) => {
+       return (s2c >= s1q) ? 'Yes' : 'Noy';
+   };
+
+   console.log(isCircleBigger(2, 3));
+
+   const myMath = (num1, num2) => {
+       let add = num1 + num2;
+       let sub = num1 - num2;
+       let mult = num1 * num2;
+       let div = num1 / num2;
+
+       return {
+           add,
+           sub,
+           mult,
+           div
+       };
+   };
+
+   console.log(myMath(8, 5));
+
+   const checkForTriangle = (a, b, c) => {
+       if (a === b && b === c && c === a) {
+           return 'Triangle ===';
+       } else if (a === b || b === c || c === a) {
+           return 'Triangle ==';
+       } else {
+           return 'Triangle not found!';
+       }
+   };
+
+   console.log(checkForTriangle(1, 2, 3));
+
+   const getArray = (a, b, c) => {
+       return [a, b, c];
+   };
 
     let oldArray = [23, 5, null, true, 'Bob', [], {}];
-    // let newArray = oldArray.map();
+    let newArray = oldArray.map((item) => {
+        if ((typeof item) == 'string') {
+            return item.toUpperCase();
+        } else if ((typeof item) == 'number') {
+            return {age: item};
+        } else {
+            return 'not a number or a string';
+        }
+    });
 
+    console.log(oldArray, newArray);
 </script>
 
 <style>
