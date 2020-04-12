@@ -46,4 +46,13 @@
 //
 // 3. В банке открыт депозит на срок N на сумму S рублей с процентной ставкой K процентов годовых. Создайте функцию, которая принимает параметрами S, N, K и выводит сумму, которая будет на депозите в конце срока.
 
+    const task1 = (number) => {
+        let newNumStr = number.toString().split('');
+
+        let newNum = newNumStr.reduce((sum, cur) => {
+            return parseInt(sum) + parseInt(cur);
+        });
+
+        console.log(newNum);
+    };
 </script>
