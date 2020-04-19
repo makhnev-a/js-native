@@ -1,0 +1,105 @@
+<div id="div">Click me!!!!</div>
+<script>
+    // Что выведет консоль?
+    // Думаем, потом удаляем комментарии и проверяем себя!!!
+    
+    // Done
+    // let arr = [];
+    // arr[1] = 1;
+    // arr[5] = 10;
+    // console.log(arr.length);
+    
+    // Done
+    // let arr = new Array(3);
+    // console.log(arr);
+    
+    // Done
+    // console.log(0 || 1 && 2 || 3);
+
+    // Done
+    // console.log(0 || '' || 2 || undefined || true || false);
+
+    // Done
+    // console.log(2 && '1' && null && undefined && true && false);
+
+    // Done
+    // console.log([] && {} || null && 100 || '');
+
+    // Применене:
+
+    // 1. Значение параметра функции по умолчанию (устар)
+
+    // function f(userParams) {
+    //     let params = userParams || defaultParams;
+    //     return params;
+    // }
+
+    // 2. В React’е часто проверяют, если условие истинно, то рендерим что-то:
+    // { isDivVisible && <div>hey!!!</div> }
+
+
+
+
+
+// Для развития:
+// (для всех функций реализуйте проверку входных параметров!!!)
+// 1.  Создайте функцию, которая принимает параметром номер года и возвращает количество дней в нём. Учесть, что годы 1400, 1900 и т.п. не являются високосными, а 1600, 2000 и т.п. — являются. См. Википедию.
+//
+//     const year = (yearNum) => {
+//         if (yearNum % 4 === 0) {
+//             return 'Год високосный ' + 366;
+//         }
+//
+//         return 'Обычный год' + 365;
+//     };
+//
+//     console.log(year(2008));
+// 2. Создайте функцию, которая принимает параметром целое число и возвращает текст, характеризующий знак и чётность этого числа. Например, «отрицательное нечётное число», «ноль», «положительное чётное число».
+//
+//     const oddOrNot = (number) => {
+//         let sign = Math.sign(number);
+//         let abs = Math.abs(number);
+//
+//         if ((sign === -1) && (abs % 2 === 0)) {
+//             return 'Otricat and 4etnoe';
+//         } else if ((sign === 1) && (abs % 2 === 0)) {
+//             return 'polojit and 4etnoe';
+//         } else if ((sign === 1) && (abs % 2 !== 0)) {
+//             return 'polojit and ne 4etnoe';
+//         } else if ((sign === -1) && (abs % 2 !== 0)) {
+//             return 'Otricat and ne 4etnoe';
+//         } else {
+//             return 'Nolb';
+//         }
+//     };
+//
+//     console.log(oddOrNot(-103));
+// 3. Создайте функцию, которая принимает параметром целое число и возвращает  количество цифр в нём.
+//
+//     const numCount = (num) => {
+//         // let i = 0;
+//         //
+//         // while (num > 1) {
+//         //     i++;
+//         //     num /= 10;
+//         // }
+//         //
+//         // return i;
+//
+//         return String(num).length;
+//     };
+//
+//     console.log(numCount(12345));
+// 4. Создайте функцию, которая принимает параметром число и возвращает строку с разбиением на группы по 3 символа. Например, 687 435 132 134 55 => «68 743 513 213 455».
+//
+    // s.split( /(?=(?:\d{3})+(?!\d))/ );
+
+    // const numDel = (num) => {
+    //     let str = String(num);
+    //
+    //     return String(str.split( /(?=(?:\d{3})+(?!\d))/ ).join(' '));
+    // };
+    //
+    // console.log(numDel(123123123));
+
+</script>
