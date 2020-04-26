@@ -1,0 +1,62 @@
+<script>
+     // task 01: создайте класс Human со свойствами name, age и методом greet
+    class Human {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        greet = () => {
+            console.log(`My name is ${this.name} and age = ${this.age}`);
+        };
+    }
+    console.dir(Human)
+    // task 02: создайте объект (сущность, инстанс) класс Human с произвольными аргументами
+    const bob = new Human('Bob', 34);
+    bob.greet();
+    console.dir(bob);
+
+    // task 03: создайте класс Student со свойствами name, age, group и методами greet и present (выводит в консоль строку "I'm fron kmb27")
+    class Student {
+        constructor(name, age, group) {
+            this.name = name;
+            this.age = age;
+            this.group = group;
+        }
+
+        greet(){
+            console.log(`My name is ${this.name} and age = ${this.age} group = ${this.group}`);
+        };
+
+        present(){
+            console.log(`I'm fron kmb${this.group}`);
+        };
+    }
+
+    // task 04: создайте объект (сущность, инстанс) класс Student с произвольными аргументами, выведите в консоль, вызовите методы.
+    const ray = new Student('ray', 23, 27);
+    // console.log(ray);
+    ray.greet();
+    ray.present();
+
+    // task 05: Дублирование?? Тогда создайте класс StudentLight c таким же функционалом как класс Student с помощью наследования функционала класса Human
+     class StudentLight extends Human {
+         constructor(name, age, group) {
+             super(name, age);
+             this.group = group;
+         }
+
+         present(){
+             console.log(`I'm fron kmb${this.group}`);
+         };
+     }
+
+    // task 06: создайте объект (сущность, инстанс) класс StudentLight с произвольными аргументами, выведите в консоль, вызовите методы.
+
+    const olga = new StudentLight('Olga', 20, 28);
+     console.dir(olga);
+    olga.greet();
+    olga.present();
+    
+
+</script>
